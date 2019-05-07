@@ -1,9 +1,10 @@
+import java.util.List;
 
 public class TriTree {
     AlphabetInterface alphabet;
     Node root;
 
-    class Node{
+    class Node {
         int count = 0;
         Node[] childes;
 
@@ -18,22 +19,47 @@ public class TriTree {
 
     }
 
-    public void add(String value, Node node) throws Exception {
+
+    public void add(String value) throws Exception {
+        Node node = findPrefix(value, true);
+        node.count++;
+    }
+
+
+//    public List<WordCount> wordCountList(String prefix) {
+//
+//    }
+//
+//    public List<WordCount> wordCountList() {
+//        wordCountList("");
+//    }
+
+
+    private Node findPrefix(String value, Boolean createIfMissing, Node node) throws Exception {
         if (value.equals("")) {
-            node.count++;
-            return;
+            return node;
         }
+
         char nextChar = value.charAt(0);
         int position = alphabet.hash(nextChar);
         value = value.substring(1);
 
         if (node.childes[position] == null) {
-            node.childes[position] = new Node();
+            if (createIfMissing) {
+                node.childes[position] = new Node();
+            }else{
+                return null;
+            }
         }
-        add(value, node.childes[position]);
+        return findPrefix(value, createIfMissing, node.childes[position]);
     }
 
-    public void add(String value) throws Exception {
-        add(value, root);
+    private Node findPrefix(String value, Boolean createIfMissing) throws Exception {
+        return findPrefix(value, createIfMissing, root);
     }
+
+    private Node findPrefix(String value) throws Exception {
+        return findPrefix(value, false, root);
+    }
+
 }

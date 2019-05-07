@@ -32,6 +32,10 @@ public class Main {
         triTree.add("hello");
         triTree.add("its");
         triTree.add("me");
+
+//        System.out.println(triTree.wordCountList());
+//        System.out.println(triTree.wordCountList("he"));
+
 //
 //        System.out.println(triTree.alphabet.hash('\''));
 //        System.out.println(triTree.alphabet.reverseHash(0));
