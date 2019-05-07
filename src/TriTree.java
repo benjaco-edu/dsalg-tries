@@ -80,4 +80,15 @@ public class TriTree {
         return findPrefix(value, false, root);
     }
 
+    public Integer wordCount(String value) throws Exception {
+        Node node = findPrefix(value);
+        if (node == null) {
+            return 0;
+        }
+        return node.count;
+    }
+
+    public Boolean hasWord(String value) throws Exception {
+        return wordCount(value) > 0;
+    }
 }

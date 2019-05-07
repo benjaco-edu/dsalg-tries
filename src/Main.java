@@ -35,23 +35,23 @@ public class Main {
             }
         });
 
-        triTree.add("hello");
-        triTree.add("hey");
-        triTree.add("he");
-        triTree.add("hello");
-        triTree.add("its");
-        triTree.add("me");
+
+
 
         //Add all the words in the Shakespear text to the trie tree
         for (int i = 0; i < originalList.size(); i++) {
             triTree.add(originalList.get(i));
         }
 
-        System.out.println(triTree.wordCountList());
-        System.out.println("----------");
-        System.out.println(triTree.wordCountList("he"));
 
+        System.out.println(triTree.wordCountList());
+
+        System.out.println(triTree.hasWord("b"));
+        System.out.println(triTree.wordCount("b"));
+        System.out.println(triTree.hasWord("babblin"));
+        System.out.println(triTree.hasWord("babbling"));
 
 
     }
+
 }
