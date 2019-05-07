@@ -26,6 +26,12 @@ public class Main {
                 return 27;
             }
         });
+
+        triTree.add("hello");
+        triTree.add("hey");
+        triTree.add("hello");
+        triTree.add("its");
+        triTree.add("me");
 //
 //        System.out.println(triTree.alphabet.hash('\''));
 //        System.out.println(triTree.alphabet.reverseHash(0));
