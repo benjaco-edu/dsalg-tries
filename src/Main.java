@@ -1,5 +1,13 @@
+import java.util.List;
+
 public class Main {
+
+
     public static void main(String[] args) throws Exception {
+
+        //Get the Shakespear.text
+        List<String> originalList = Helpers.fileToWordArray("./src/shakespeare-complete.txt");
+
         TriTree triTree = new TriTree(new AlphabetInterface() {
             @Override
             public int hash(char value) throws Exception {
@@ -34,9 +42,16 @@ public class Main {
         triTree.add("its");
         triTree.add("me");
 
+        //Add all the words in the Shakespear text to the trie tree
+        for (int i = 0; i < originalList.size(); i++) {
+            triTree.add(originalList.get(i));
+        }
+
         System.out.println(triTree.wordCountList());
         System.out.println("----------");
         System.out.println(triTree.wordCountList("he"));
+
+
 
     }
 }
