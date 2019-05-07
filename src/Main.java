@@ -29,30 +29,14 @@ public class Main {
 
         triTree.add("hello");
         triTree.add("hey");
+        triTree.add("he");
         triTree.add("hello");
         triTree.add("its");
         triTree.add("me");
 
-//        System.out.println(triTree.wordCountList());
-//        System.out.println(triTree.wordCountList("he"));
+        System.out.println(triTree.wordCountList());
+        System.out.println("----------");
+        System.out.println(triTree.wordCountList("he"));
 
-//
-//        System.out.println(triTree.alphabet.hash('\''));
-//        System.out.println(triTree.alphabet.reverseHash(0));
-//
-//        System.out.println(triTree.alphabet.hash('a'));
-//        System.out.println(triTree.alphabet.reverseHash(1));
-//
-//        System.out.println(triTree.alphabet.hash('b'));
-//        System.out.println(triTree.alphabet.reverseHash(2));
-//
-//        System.out.println(triTree.alphabet.hash('c'));
-//        System.out.println(triTree.alphabet.reverseHash(3));
-//
-//        System.out.println(triTree.alphabet.hash('y'));
-//        System.out.println(triTree.alphabet.reverseHash(25));
-//
-//        System.out.println(triTree.alphabet.hash('z'));
-//        System.out.println(triTree.alphabet.reverseHash(26));
     }
 }

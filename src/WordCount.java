@@ -6,4 +6,9 @@ public class WordCount {
         this.word = word;
         this.count = count;
     }
+
+    @Override
+    public String toString() {
+        return count + "x " + word;
+    }
 }
