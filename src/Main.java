@@ -42,9 +42,9 @@ public class Main {
         for (int i = 0; i < originalList.size(); i++) {
             triTree.add(originalList.get(i));
         }
-
-
         System.out.println(triTree.wordCountList());
+
+        System.out.println(triTree.wordCountList("ab"));
 
         System.out.println(triTree.hasWord("b"));
         System.out.println(triTree.wordCount("b"));
