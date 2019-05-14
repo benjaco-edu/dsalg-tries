@@ -1,6 +1,9 @@
 # Assignment 5 - Text Analysis Using Tries
 Group: Konstanten1
 
+## Report
+https://docs.google.com/document/d/1UFm4t8XLjlnhWZEttKmxwjOkVl3bYvGniOWbof_0pl0/edit?usp=sharing
+
 
 Func         | Output
 ------------ | -------------
