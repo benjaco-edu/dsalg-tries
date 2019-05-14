@@ -1,0 +1,5 @@
+/target/*
+!/target/site/
+.DS_Store
+/nbproject/
+out
