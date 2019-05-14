@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -42,16 +43,20 @@ public class Main {
         for (int i = 0; i < originalList.size(); i++) {
             triTree.add(originalList.get(i));
         }
-        System.out.println(triTree.wordCountList());
+        //System.out.println(triTree.wordCountList());
 
-        System.out.println(triTree.wordCountList("ab"));
+        //System.out.println(triTree.wordCountList("ab"));
 
-        System.out.println(triTree.hasWord("b"));
-        System.out.println(triTree.wordCount("b"));
-        System.out.println(triTree.hasWord("babblin"));
-        System.out.println(triTree.hasWord("babbling"));
+        //System.out.println(triTree.hasWord("b"));
+        //System.out.println(triTree.wordCount("b"));
+        //System.out.println(triTree.hasWord("babblin"));
+        //System.out.println(triTree.hasWord("babbling"));
 
-
+        long startTime = System.nanoTime();
+        triTree.hasWord("b");
+        long endTime = System.nanoTime();
+        long timeElapsed = endTime - startTime;
+        System.out.println(timeElapsed);
     }
 
 }
