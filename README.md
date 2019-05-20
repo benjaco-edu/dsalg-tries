@@ -53,7 +53,7 @@ Tries are super fast for locking up the possible next letters, it can be done in
 
 
 ## Code
-The code for our example with tries used for counting words in the complete works of Shakespeare can be found in the `src` folder,
+The code for our example with tries used for counting words in the complete works of Shakespeare can be found in the `src` folder.
 
 
 ## Our performance results
