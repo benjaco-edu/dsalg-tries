@@ -1,48 +1,90 @@
-# Assignment 5 - Text Analysis Using Tries
-Group: Konstanten1
+# Project #5 - Text Analysis Using Tries
+Christian Engelberth Olsen, Sean Altoft & Benjamin Schultz Larsen
 
-## Report
-https://docs.google.com/document/d/1UFm4t8XLjlnhWZEttKmxwjOkVl3bYvGniOWbof_0pl0/edit?usp=sharing
+![](https://github.com/benjaco-edu/dsalg-tries/blob/master/img/header.png?raw=true)
+
+## Intro
+
+We’ve opted to write a report on Text Mining and how tries can be used for sorting big data, in regards to the algorithm topic of tries.
+
+As for our data to be handled by our solution, we’ll be using the complete works of Shakespeare.
+
+The goal of the assignment is that we want to be able to get a list of words, how many times a word occurred, as well as get the list for only the words starting in a specific way.
+
+Our alphabet for this is going to be a-z and ‘ for the Shakespeare dataset, but the algorithm should be able to handle any presented alphabet or text without modifying the class.
+
+## What is tries?
+
+![](https://github.com/benjaco-edu/dsalg-tries/blob/master/img/tree.png?raw=true)
+
+Trie (also known as digital tree, radix tree or prefix tree) is a tree data structure where each leg in a three represent a letter in a word, and a character in a word has its own level followed by each other. It is the reason it is fast to lookup a word in the data structure (follow the letter) always takes n time where n is the number of characters in the word there is being looked up.
+
+The word is only found if the last node leads to another note where a special flag is set, a flag who says that the word has ended. If this flag wasn't a part of the algorithm, the word “bo” would be recognized as a word in a structure where only the word “boat” has been added.
+
+## Real life Context and uses? 
+
+There is (at least) to categories of uses for tries, statiscal speedup, and uses in applications.
+
+### Statistical
+
+If you have a large amount of text, it can be useful to load it into a trie to be able to quickly get information about how many times a specific word have been found in the text without going through all of the words. 
+
+Or it is possible to get a list of words starting with a chosen prefix to see with parts of the alphabet there is popular as starting sequences.
+
+### Applications
+
+Tris can be used in all sort of writing aid, for predicting the next letter in the sentence/word. Ex. search-engine, in car gps applications, orthographic corrector or as part of a phones keyboard.
+
+Tries are super fast for locking up the possible next letters, it can be done in constant time (it the tree it navigated while typing), the legs of a given node can be used for proposals of the next character.
 
 
-Func         | Output
------------- | -------------
-| triTree.hasWord("b")      | true |
-| triTree.wordCount("b")      | 15      |
-| triTree.hasWord("babblin") | false      |
-| triTree.hasWord("babbling") | true      |
-| triTree.wordCountList() | [14668x a, 96x aaron, 1x aarons, 1x abaissiez, 4x abandon, 6x abandond, 2x abandoned, 2x abase, 1x abashd, 14x abate, 3x abated, 3x abatement, 1x abatements, ... ]      | 
-| triTree.wordCountList("ab") | [1x abaissiez, 4x abandon, 6x abandond, 2x abandoned, 2x abase, 1x abashd, 14x abate, 3x abated, 3x abatement, 1x abatements, 1x abates, 1x abatfowling, ... ]      |
+## Code
+The code for our example with tries used for counting words in the complete works of Shakespeare can be found in the `src` folder,
 
 
-### Function times with 100% of Shakespeare text
-Func         |Time 1 (N/S)   | Time 2 (N/S)  | Time 3 (N/S) | Time 4 (N/S)  | Average (N/S)  
------------- |  ------------ | ------------- | ------------ | ------------- | -------------
-| triTree.hasWord("b")       | 26900 | 23300 | 43500 | 24000| 29425
-| triTree.wordCount("b")     | 19700      |20100| 13100 | 26500 | 19850 
-| triTree.hasWord("babblin") | 25800      |33500| 24500| 22200| 26500
-| triTree.hasWord("babbling")| 28800 |18800      |64000| 27500| 34775
-| triTree.wordCountList()    | 58000000| 106000000|73000000|84000000|80250000 
-| triTree.wordCountList("ab")| 50000000| 31000000| 29000000|53000000|40750000‬
+## Our performance results?
+
+We timed our functions with 3 different partitions of the shakespeare data set (100%, 50% and 25% of the data). The timing calculated as a average of 5 runs pr. function pr. data size. The results showed that no matter how big the dataset where, it took roughly the same time to executed the given function.
+
+### Word count list
+
+![](https://github.com/benjaco-edu/dsalg-tries/blob/master/img/wordcountlist.png?raw=true)
+
+We would have expected the time for tree traversal to grow as there were added more words to the structure. But it didn’t, we world guess it is because the cpu is busting op and gives us unreliable timing.
+
+### Word count
+
+![](https://github.com/benjaco-edu/dsalg-tries/blob/master/img/wordcount.png?raw=true)
+
+As the collections grows, it takes the same amount of time to get the word count, exactly as expected. 
+
+### Has word
+
+![](https://github.com/benjaco-edu/dsalg-tries/blob/master/img/hasword.png?raw=true)
+
+As the collections grows, it takes the same amount of time to found out if a word is in the collection, exactly as expected.
+
+## General performance
+
+Using a trie instead of a hash table for word check has a better worst case performance because of hash collisions, tries has nothing of that.
+
+Some data can however be a lot worse for a trie than a hash table, that is when the data is sparse and do not have a lot (of the start) in common, that can ex. Be floating numbers where you can walk out of a long and lonely path only to find your only little home alone in the wilderness.
+
+## _Links and Literature_
+
+https://www.topcoder.com/community/competitive-programming/tutorials/using-tries/
+
+https://www.youtube.com/watch?v=zIjfhVPRZCg
+
+https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014
+
+https://en.wikipedia.org/wiki/Trie
+
+https://algs4.cs.princeton.edu/52trie/
+
+https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/
+
+https://stackoverflow.com/questions/17891442/what-is-the-best-worst-average-case-big-o-runtime-of-a-trie-data-structure 
 
 
-### Function times with 50% of Shakespeare text
-Func         |Time 1 (N/S)   | Time 2 (N/S)  | Time 3 (N/S) | Time 4 (N/S) | Average (N/S)   
------------- |  ------------ | ------------- | ------------ | ------------- | -------------
-| triTree.hasWord("b")       | 21800 | 22500 | 18800 | 18100 | 20300
-| triTree.wordCount("b")     | 25500      |22900| 13800 | 22900 | 21275
-| triTree.hasWord("babblin") | 73900      |62100| 340400| 73100 | 137375
-| triTree.hasWord("babbling")| 47300 |60900      |44900| 111400 | 66125
-| triTree.wordCountList()    | 123539800| 87923100|94952200|71485100 | 94475050
-| triTree.wordCountList("ab")| 36639300| 56838400| 86096400|37420300 | 54248600
 
-
-### Function times with 25% of Shakespeare text
-Func         |Time 1 (N/S)   | Time 2 (N/S)  | Time 3 (N/S) | Time 4 (N/S)|  Average (N/S) |   
------------- |  ------------ | ------------- | ------------ | ------------- | -------------
-| triTree.hasWord("b")       | 16900 | 19700 | 24100 | 28200 | 22225
-| triTree.wordCount("b")     | 18600      |20700| 22400 | 13300 | 18750
-| triTree.hasWord("babblin") | 56200      |79700| 66700| 102200 | 76200
-| triTree.hasWord("babbling")| 102400 |70900      |80900| 69000 | 80800
-| triTree.wordCountList()    | 70636000| 61404500|63570500|114899000 | 77627500
-| triTree.wordCountList("ab")| 39584300| 52022400| 70045000|37084600 | 49684075
