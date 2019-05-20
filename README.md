@@ -5,7 +5,7 @@ Christian Engelberth Olsen, Sean Altoft & Benjamin Schultz Larsen
 
 _Sections_
 
-[Into](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#intro)
+[Intro](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#intro)
 
 [What is tries?](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#what-is-tries)
 
