@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class TriTree {
+public class TrieTree {
     AlphabetInterface alphabet;
     Node root;
 
@@ -14,36 +14,34 @@ public class TriTree {
         }
     }
 
-    public TriTree(AlphabetInterface alphabet) {
+    public TrieTree(AlphabetInterface alphabet) {
         this.alphabet = alphabet;
         root = new Node();
 
     }
-
 
     public void add(String value) throws Exception {
         Node node = findPrefix(value, true);
         node.count++;
     }
 
-
     public List<WordCount> wordCountList(String prefix) throws Exception {
         Node base = findPrefix(prefix);
 
         List<WordCount> result = new ArrayList<>();
 
-        trieverse(base, prefix, result);
+        traverse(base, prefix, result);
 
         return result;
     }
 
-    private void trieverse(Node base, String prefix, List<WordCount> result) {
+    private void traverse(Node base, String prefix, List<WordCount> result) {
         if (base.count > 0) {
             result.add(new WordCount(prefix, base.count));
         }
         for (int i = 0; i < alphabet.getAlphabetSize(); i++) {
             if (base.childes[i] != null) {
-                trieverse(base.childes[i], prefix + alphabet.reverseHash(i), result);
+                traverse(base.childes[i], prefix + alphabet.reverseHash(i), result);
             }
         }
     }
@@ -51,7 +49,6 @@ public class TriTree {
     public List<WordCount> wordCountList() throws Exception {
         return wordCountList("");
     }
-
 
     private Node findPrefix(String value, Boolean createIfMissing, Node node) throws Exception {
         if (value.equals("")) {
