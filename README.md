@@ -3,6 +3,20 @@ Christian Engelberth Olsen, Sean Altoft & Benjamin Schultz Larsen
 
 ![](https://github.com/benjaco-edu/dsalg-tries/blob/master/img/header.png?raw=true)
 
+_Sections_
+
+[Into](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#intro)
+
+[What is tries?](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#what-is-tries)
+
+[Real life Context and uses?](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#real-life-context-and-uses)
+
+[Code](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#code)
+
+[Our performance results?](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#our-performance-results)
+
+[General performance](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#general-performance)
+
 ## Intro
 
 We’ve opted to write a report on Text Mining and how tries can be used for sorting big data, in regards to the algorithm topic of tries.
