@@ -7,13 +7,13 @@ _Sections_
 
 [Intro](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#intro)
 
-[What is tries?](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#what-is-tries)
+[What is tries](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#what-is-tries)
 
-[Real life Context and uses?](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#real-life-context-and-uses)
+[Real life Context and uses](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#real-life-context-and-uses)
 
 [Code](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#code)
 
-[Our performance results?](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#our-performance-results)
+[Our performance results](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#our-performance-results)
 
 [General performance](https://github.com/benjaco-edu/dsalg-tries/blob/master/README.md#general-performance)
 
@@ -27,7 +27,7 @@ The goal of the assignment is that we want to be able to get a list of words, ho
 
 Our alphabet for this is going to be a-z and ‘ for the Shakespeare dataset, but the algorithm should be able to handle any presented alphabet or text without modifying the class.
 
-## What is tries?
+## What is tries
 
 ![](https://github.com/benjaco-edu/dsalg-tries/blob/master/img/tree.png?raw=true)
 
@@ -35,7 +35,7 @@ Trie (also known as digital tree, radix tree or prefix tree) is a tree data stru
 
 The word is only found if the last node leads to another note where a special flag is set, a flag who says that the word has ended. If this flag wasn't a part of the algorithm, the word “bo” would be recognized as a word in a structure where only the word “boat” has been added.
 
-## Real life Context and uses? 
+## Real life Context and uses
 
 There is (at least) to categories of uses for tries, statiscal speedup, and uses in applications.
 
@@ -56,7 +56,7 @@ Tries are super fast for locking up the possible next letters, it can be done in
 The code for our example with tries used for counting words in the complete works of Shakespeare can be found in the `src` folder,
 
 
-## Our performance results?
+## Our performance results
 
 We timed our functions with 3 different partitions of the shakespeare data set (100%, 50% and 25% of the data). The timing calculated as a average of 5 runs pr. function pr. data size. The results showed that no matter how big the dataset where, it took roughly the same time to executed the given function.
 
